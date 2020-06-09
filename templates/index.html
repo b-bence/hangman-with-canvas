@@ -8,5 +8,38 @@
 </head>
 <body>
 <h1>Hangman</h1>
+<div id="input-field">
+    <form action="/">
+        <label for="user-input">Please, enter a letter and press Enter</label>
+        <input type="text" id="user-input" name="user-input" size="2">
+    </form>
+</div>
+
+
+<!-- The Modal -->
+<div id="puzzleModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="image-container">
+            <img src="/static/images/hangman_clean.png" alt="Clean code" class="puzzle-card" data-topic="clean_code">
+            <img src="/static/images/hangman_history.png" alt="History" class="puzzle-card" data-topic="history">
+            <img src="/static/images/hangman_music.jpg" alt="Music" class="puzzle-card" data-topic="music">
+            <img src="/static/images/hangman_psy.png" alt="Psychology" class="puzzle-card" data-topic="psychology">
+            <img src="/static/images/hangman_sql.png" alt="SQL" class="puzzle-card" data-topic="sql">
+            <div id="topic-container">
+                <span class="topic-names">Clean Code</span>
+                <span class="topic-names">History</span>
+                <span class="topic-names">Music</span>
+                <span class="topic-names">Psychology</span>
+                <span class="topic-names">SQL</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
 </body>
 </html>

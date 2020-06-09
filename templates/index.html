@@ -4,9 +4,27 @@
     <meta charset="UTF-8">
     <title>Hangman</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/thunder.css') }}">
     <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/thunder.js') }}" defer></script>
 </head>
-<body>
-<h1>Hangman</h1>
+<body id="flexbox-container">
+
+
+<section class="thunder">
+    {#<h1>Hangman</h1>#}
+    <canvas id="canvas1"></canvas>
+    <canvas id="canvas2"></canvas>
+    <canvas id="canvas3"></canvas>
+</section>
+
+<div id="container">
+    <canvas id="hangman" width="180" height="250"></canvas>
+</div>
+
+<div class="buttons">
+    <button id="next">Next</button>
+    <button id="reset">Reset</button>
+</div>
 </body>
 </html>

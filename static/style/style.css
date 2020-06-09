@@ -3,3 +3,9 @@ h1{
     text-shadow: 2px 2px gray;
     font-family: sans-serif;
 }
+
+#input-field{
+    text-align: center;
+    position: relative;
+    top: 100px;
+}

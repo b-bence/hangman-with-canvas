@@ -96,4 +96,12 @@ section {
   display: inline-flex;
   position: unset; }
 
+#flexbox-container {
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
 /*# sourceMappingURL=thunder.css.map */

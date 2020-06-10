@@ -3,19 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Hangman</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/hanging.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/thunder.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/displayLetters.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
     <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/hanging.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/thunder.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/displayLetters.js') }}" defer></script>
 </head>
-<body>
-<h1>Hangman</h1>
-<div id="input-field">
-    <form action="/">
-        <label for="user-input">Please, enter a letter and press Enter</label>
-        <input type="text" id="user-input" name="user-input" size="2">
-    </form>
+<body id="flexbox-container">
+
+
+<section class="thunder">
+    {#<h1>Hangman</h1>#}
+    <canvas id="canvas1"></canvas>
+    <canvas id="canvas2"></canvas>
+    <canvas id="canvas3"></canvas>
+</section>
+
+<div id="container">
+    <canvas id="hangman" width="180" height="250"></canvas>
 </div>
 
 
+<div class="buttons">
+    <button id="next">Next</button>
+    <button id="reset">Reset</button>
+</div>
+
+{% if word_length %}
+    <div class="letter-container">
+        {% for foo in range(word_length) %}
+            <div class="hidden-letter">A</div>
+        {% endfor %}
+    </div>
+
+    <div class="letter-container">
+        {% for letter in alphabet %}
+            <button data-letter='{{ letter }}' class="letter">{{ letter }}</button>
+        {% endfor %}
+    </div>
+{% endif %}
 
 <!-- The Modal -->
 <div id="puzzleModal" class="modal">
@@ -43,6 +72,13 @@
 
 
 <div id="display-puzzle"></div>
+
+<div id="input-field">
+    <form action="/">
+        <label for="user-input">Please, enter a letter and press Enter</label>
+        <input type="text" id="user-input" name="user-input" size="2">
+    </form>
+</div>
 
 </body>
 </html>

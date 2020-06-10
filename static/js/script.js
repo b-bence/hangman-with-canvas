@@ -1,4 +1,3 @@
-
 function init() {
     showModal();
 
@@ -63,6 +62,3 @@ function showModal() {
 }
 
 init();
-
-
-

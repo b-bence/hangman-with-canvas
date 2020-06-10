@@ -64,11 +64,11 @@ function addEventListenerToLetters() {
     const letters = document.querySelectorAll('.letter');
 
     letters.forEach(letter => {
-        letter.addEventListener('click', handleClick.bind(this, letter))
+        letter.addEventListener('click', handleClickOnLetters.bind(this, letter))
     })
 }
 
-function handleClick(letter) {
+function handleClickOnLetters(letter) {
     const letterValue = letter.dataset.letter;
     const mysteryWord = document.querySelector('#hidden-word');
     letter.disabled = true;
@@ -82,12 +82,12 @@ function handleClick(letter) {
     }
 
     if (!correctGuess) {
-        simulateClick()
+        simulateClickOnHiddenButton()
     }
     checkWin();
 }
 
-function simulateClick() {
+function simulateClickOnHiddenButton() {
     const nextButton = document.querySelector('#next');
     nextButton.click();
     let numberOfWrongGuesses = +nextButton.dataset.wrong_guess;
@@ -98,7 +98,8 @@ function simulateClick() {
 }
 
 function checkLose(numberOfWrongGuesses) {
-    if (numberOfWrongGuesses === 9) {
+    const numberOfLives = 9;
+    if (numberOfWrongGuesses === numberOfLives) {
         console.log('lost')
     }
 }

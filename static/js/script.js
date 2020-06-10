@@ -17,16 +17,26 @@ function checkInput(event) {
 }
 
 
-// function getPuzzle(topic) {
-//     fetch('data/puzzle.json')
-//         .then(response => response.json())
-//         .then(data => choosePuzzle(data));
-// }
-//
-//
+function getPuzzle(topic) {
+    fetch('static/data/puzzle.json')
+        .then(response => response.json())
+        .then(data => choosePuzzle(data[topic]));
+}
+
+
 function chooseTopic(event) {
     let chosenTopic = event.target.getAttribute('data-topic');
-    console.log(chosenTopic)
+    console.log(chosenTopic);
+    getPuzzle(chosenTopic);
+    const modal = document.getElementById("puzzleModal");
+    modal.classList.add('hidden')
+}
+
+
+function choosePuzzle(puzzleList) {
+    let puzzle = puzzleList[Math.floor((Math.random()*puzzleList.length))]
+    let puzzleField = document.getElementById('display-puzzle');
+    puzzleField.innerHTML = puzzle
 }
 
 
@@ -50,6 +60,5 @@ function showModal() {
     }
 
 }
-
 
 init();

@@ -4,6 +4,7 @@ h1 {
     font-family: sans-serif;
 }
 
+
 #input-field {
     text-align: center;
     position: relative;
@@ -70,3 +71,10 @@ h1 {
 .hidden {
     display: none;
 }
+
+#input-field{
+    text-align: center;
+    position: relative;
+    top: 100px;
+}
+

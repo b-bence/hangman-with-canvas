@@ -1,10 +1,10 @@
+
 function init() {
     showModal();
 
     let inputField = document.getElementById('user-input');
     inputField.addEventListener("keyup", checkInput);
 }
-
 
 function checkInput(event) {
     let key = event.keyCode;
@@ -14,6 +14,7 @@ function checkInput(event) {
         let inputValue = document.getElementById('user-input').value;
         console.log(inputValue)
     }
+
 }
 
 
@@ -62,3 +63,6 @@ function showModal() {
 }
 
 init();
+
+
+

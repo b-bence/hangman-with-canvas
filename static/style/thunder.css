@@ -14,7 +14,8 @@ html {
   padding: 0; }
 
 html,
-section {
+section,
+canvas {
   width: 100%;
   height: 100%; }
 

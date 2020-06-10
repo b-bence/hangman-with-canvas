@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Hangman</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/hanging.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/thunder.css') }}">
-    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/displayLetters.css') }}">
+    <script src="{{ url_for('static', filename='js/hanging.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/thunder.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/displayLetters.js') }}" defer></script>
 </head>
 <body id="flexbox-container">
 
@@ -27,6 +29,20 @@
     <button id="next">Next</button>
     <button id="reset">Reset</button>
 </div>
+
+{% if word_length %}
+    <div id="letter-container">
+        {% for foo in range(word_length) %}
+            <div class="hidden">A</div>
+        {% endfor %}
+    </div>
+
+    <div id="letter-container">
+        {% for letter in alphabet %}
+            <button data-letter='{{ letter }}' class="letter">{{ letter }}</button>
+        {% endfor %}
+    </div>
+{% endif %}
 
 </body>
 </html>

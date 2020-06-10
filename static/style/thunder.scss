@@ -34,7 +34,8 @@ html {
 }
 
 html,
-section, {
+section,
+canvas{
   @include size(100%);
 }
 

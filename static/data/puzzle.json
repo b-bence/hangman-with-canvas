@@ -1,0 +1,37 @@
+{
+  "sql": [
+    "where clause",
+    "distinct",
+    "constraint",
+    "descending",
+    "primary key"
+  ],
+  "clean_code": [
+    "indentation",
+    "naming",
+    "magic number",
+    "dead code",
+    "repetition"
+  ],
+  "psychology": [
+    "mesmerize",
+    "superego",
+    "instinct",
+    "obsession",
+    "attachment"
+  ],
+  "music": [
+    "instrument",
+    "fiddle",
+    "headphone",
+    "amplifier",
+    "percussion"
+  ],
+  "history": [
+    "battle",
+    "revolution",
+    "peace-treaty",
+    "independence",
+    "suffragette"
+  ]
+}

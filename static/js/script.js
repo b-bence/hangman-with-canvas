@@ -1,29 +1,15 @@
 init();
+
 function init() {
     showModal();
-
-    // let inputField = document.getElementById('user-input');
-    // inputField.addEventListener("keyup", checkInput);
+    addEventListenerToLetters();
 }
-
-function checkInput(event) {
-    let key = event.keyCode;
-    let enterKey = 13;
-    if (key === enterKey) {
-        console.log('Enter');
-        let inputValue = document.getElementById('user-input').value;
-        console.log(inputValue)
-    }
-
-}
-
 
 function getPuzzle(topic) {
     fetch('static/data/puzzle.json')
         .then(response => response.json())
         .then(data => choosePuzzle(data[topic]));
 }
-
 
 function chooseTopic(event) {
     let chosenTopic = event.target.getAttribute('data-topic');
@@ -33,14 +19,12 @@ function chooseTopic(event) {
     modal.classList.add('hidden')
 }
 
-
 function choosePuzzle(puzzleList) {
     let puzzle = puzzleList[Math.floor((Math.random() * puzzleList.length))]
     let puzzleField = document.getElementById('display-puzzle');
     puzzleField.innerHTML = puzzle;
     hideWord()
 }
-
 
 function showModal() {
 
@@ -60,7 +44,6 @@ function showModal() {
     for (let topic of puzzleTopics) {
         topic.addEventListener('click', chooseTopic)
     }
-
 }
 
 function hideWord() {
@@ -75,5 +58,65 @@ function hideWord() {
         }
     }
     hiddenWordBox.innerHTML = hiddenWordBoxValue;
+}
+
+function addEventListenerToLetters() {
+    const letters = document.querySelectorAll('.letter');
+
+    letters.forEach(letter => {
+        letter.addEventListener('click', handleClick.bind(this, letter))
+    })
+}
+
+function handleClick(letter) {
+    const letterValue = letter.dataset.letter;
+    const mysteryWord = document.querySelector('#hidden-word');
+    letter.disabled = true;
+
+    let correctGuess = false;
+    for (let letter = 0; letter < mysteryWord.childNodes.length; letter++) {
+        if (mysteryWord.childNodes[letter].dataset.letter === letterValue) {
+            mysteryWord.childNodes[letter].innerHTML = letterValue;
+            correctGuess = true;
+        }
+    }
+
+    if (!correctGuess) {
+        simulateClick()
+    }
+    checkWin();
+}
+
+function simulateClick() {
+    const nextButton = document.querySelector('#next');
+    nextButton.click();
+    let numberOfWrongGuesses = +nextButton.dataset.wrong_guess;
+    numberOfWrongGuesses++;
+    nextButton.dataset.wrong_guess = numberOfWrongGuesses;
+
+    checkLose(numberOfWrongGuesses);
+}
+
+function checkLose(numberOfWrongGuesses) {
+    if (numberOfWrongGuesses === 9) {
+        console.log('lost')
+    }
+}
+
+function checkWin() {
+    const mysteryWord = document.querySelector('#hidden-word');
+    const mysteryWordLength = mysteryWord.childNodes.length;
+
+    let unhiddenWords = 0;
+
+    for (let letter = 0; letter < mysteryWordLength; letter++) {
+        if (mysteryWord.childNodes[letter].innerHTML) {
+            unhiddenWords++;
+        }
+    }
+
+    if (unhiddenWords === mysteryWordLength) {
+        console.log('win')
+    }
 }
 

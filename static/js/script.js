@@ -1,8 +1,9 @@
+init();
 function init() {
     showModal();
 
-    let inputField = document.getElementById('user-input');
-    inputField.addEventListener("keyup", checkInput);
+    // let inputField = document.getElementById('user-input');
+    // inputField.addEventListener("keyup", checkInput);
 }
 
 function checkInput(event) {
@@ -34,9 +35,10 @@ function chooseTopic(event) {
 
 
 function choosePuzzle(puzzleList) {
-    let puzzle = puzzleList[Math.floor((Math.random()*puzzleList.length))]
+    let puzzle = puzzleList[Math.floor((Math.random() * puzzleList.length))]
     let puzzleField = document.getElementById('display-puzzle');
-    puzzleField.innerHTML = puzzle
+    puzzleField.innerHTML = puzzle;
+    hideWord()
 }
 
 
@@ -61,4 +63,17 @@ function showModal() {
 
 }
 
-init();
+function hideWord() {
+    const word = document.querySelector('#display-puzzle').innerHTML;
+    const hiddenWordBox = document.querySelector('#hidden-word');
+
+    let hiddenWordBoxValue = "";
+
+    for (let letter = 0; letter < word.length; letter++) {
+        if (word[letter] !== ' ' && word[letter] !== "-") {
+            hiddenWordBoxValue += `<div class="hidden-letter" data-letter="${word[letter]}"></div>`
+        }
+    }
+    hiddenWordBox.innerHTML = hiddenWordBoxValue;
+}
+

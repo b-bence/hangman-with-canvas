@@ -10,11 +10,12 @@ function addEventListenerToLetters(){
 
 function handleClick(letter){
     const letterValue = letter.dataset.letter;
+    const mysteryWord = document.querySelector('#hidden-word');
 
-    const mysteryWord = 'Hello'
+    for (let letter = 0; letter < mysteryWord.childNodes.length; letter++){
+        if(mysteryWord.childNodes[letter].dataset.letter === letterValue){
+            mysteryWord.childNodes[letter].innerHTML = letterValue
+        }
+    }
 }
 
-
-function sendWord(){
-    fetch()
-}

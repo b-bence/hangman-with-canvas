@@ -35,10 +35,10 @@
 </div>
 
 {% if word_length %}
-    <div class="letter-container">
-        {% for foo in range(word_length) %}
-            <div class="hidden-letter">A</div>
-        {% endfor %}
+    <div class="letter-container" id="hidden-word">
+{#        {% for foo in range(word_length) %}#}
+{#            <div class="hidden-letter">A</div>#}
+{#        {% endfor %}#}
     </div>
 
     <div class="letter-container">

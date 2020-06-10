@@ -1,11 +1,11 @@
-#letter-container {
+.letter-container {
     display: inline-flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
 
-.hidden,.letter {
+.hidden-letter, .letter {
     margin: 10px;
     width: 40px;
     height: 40px;

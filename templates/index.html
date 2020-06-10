@@ -33,13 +33,13 @@
 </div>
 
 {% if word_length %}
-    <div id="letter-container">
+    <div class="letter-container">
         {% for foo in range(word_length) %}
-            <div class="hidden">A</div>
+            <div class="hidden-letter">A</div>
         {% endfor %}
     </div>
 
-    <div id="letter-container">
+    <div class="letter-container">
         {% for letter in alphabet %}
             <button data-letter='{{ letter }}' class="letter">{{ letter }}</button>
         {% endfor %}

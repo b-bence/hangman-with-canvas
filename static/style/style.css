@@ -1,7 +1,12 @@
-h1 {
+#game-title {
     text-align: center;
-    text-shadow: 2px 2px gray;
-    font-family: sans-serif;
+    position: absolute;
+    top: 100px;
+    color: blanchedalmond;
+    font-size: 80px;
+    font-style: unset;
+    text-shadow: 2px 2px red;
+    font-family: 'Metal Mania', cursive;
 }
 
 
@@ -70,10 +75,4 @@ h1 {
 
 .hidden {
     display: none;
-}
-
-#input-field{
-    text-align: center;
-    position: relative;
-    top: 100px;
 }

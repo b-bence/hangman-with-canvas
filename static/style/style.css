@@ -1,7 +1,12 @@
-h1 {
-    text-align: center;
-    text-shadow: 2px 2px gray;
-    font-family: sans-serif;
+#game-title {
+    text-align: left;
+    position: initial;
+    top: 25px;
+    color: blanchedalmond;
+    font-size: 80px;
+    font-style: unset;
+    text-shadow: 2px 2px red;
+    font-family: 'Metal Mania', cursive;
 }
 
 
@@ -15,19 +20,23 @@ h1 {
     display: inline-flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    width: 100%;
 }
 
 .puzzle-card {
     width: 200px;
     border-style: ridge;
-    border-color: blanchedalmond;
+    border-color: darkred;
     border-width: 10px;
+    background-color: white;
+    height: 200px;
 }
 
 #topic-container {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
+    color: white;
 }
 
 /* The Modal (background) */
@@ -51,6 +60,8 @@ h1 {
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
+    background-image: url("/static/images/modal.jpg");
+    background-size: 100%;
 }
 
 /* The Close Button */
@@ -72,9 +83,14 @@ h1 {
     display: none;
 }
 
-#input-field{
+.white-gothic-text {
+    color: white;
+    font-family: 'Metal Mania', cursive;
+    font-size: 30px;
+    padding-bottom: 50px;
     text-align: center;
-    position: relative;
-    top: 100px;
 }
 
+#hangman{
+    /*margin-top: 100px;*/
+}

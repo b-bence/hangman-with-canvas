@@ -35,3 +35,16 @@
     font-weight: bolder;
     font-family: 'Metal Mania', cursive;
 }
+
+.empty-letter {
+    opacity: 0;
+    padding-right: 50px;
+}
+
+.hyphen {
+    color: white;
+    font-family: 'Metal Mania', cursive;
+    font-size: 30px;
+    padding: 15px;
+    text-align: center;
+}

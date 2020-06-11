@@ -25,14 +25,16 @@
 .puzzle-card {
     width: 200px;
     border-style: ridge;
-    border-color: blanchedalmond;
+    border-color: darkred;
     border-width: 10px;
+    background-color: white;
 }
 
 #topic-container {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
+    color: white;
 }
 
 /* The Modal (background) */
@@ -56,6 +58,8 @@
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
+    background-image: url("/static/images/modal.jpg");
+    background-size: 100%;
 }
 
 /* The Close Button */
@@ -75,4 +79,11 @@
 
 .hidden {
     display: none;
+}
+
+.white-gothic-text {
+    color: white;
+    font-family: 'Metal Mania', cursive;
+    font-size: 30px;
+    padding-bottom: 50px;
 }

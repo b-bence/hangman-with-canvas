@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     width: 50%;
+    padding-top: 50px;
 }
 
 .hidden-letter, .letter {
@@ -15,8 +16,9 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 25px;
+    font-size: 36px;
     font-weight: bolder;
+    font-family: 'Metal Mania', cursive;
 }
 
 .letter {
@@ -25,9 +27,24 @@
     height: 40px;
     border-radius: 5px;
     background: blanchedalmond;
+    color: darkred;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 25px;
+    font-size: 36px;
     font-weight: bolder;
+    font-family: 'Metal Mania', cursive;
+}
+
+.empty-letter {
+    opacity: 0;
+    padding-right: 50px;
+}
+
+.hyphen {
+    color: white;
+    font-family: 'Metal Mania', cursive;
+    font-size: 30px;
+    padding: 15px;
+    text-align: center;
 }

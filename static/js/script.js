@@ -74,6 +74,10 @@ function hideWord() {
     for (let letter = 0; letter < word.length; letter++) {
         if (word[letter] !== ' ' && word[letter] !== "-") {
             hiddenWordBoxValue += `<div class="hidden-letter" data-letter="${word[letter]}"></div>`
+        }else if(word[letter] === "-"){
+            hiddenWordBoxValue += `<div class="hyphen" data-letter="${word[letter]}">-</div>`
+        }else{
+            hiddenWordBoxValue += `<div class="empty-letter" data-letter="${word[letter]}"></div>`
         }
     }
     hiddenWordBox.innerHTML = hiddenWordBoxValue;
@@ -86,7 +90,7 @@ function addEventListenerToLetters() {
         letter.addEventListener('click', handleClickOnLetters.bind(this, letter))
     });
 
-    let cheatButton = document.getElementById('cheat-button')
+    let cheatButton = document.getElementById('cheat-button');
     cheatButton.addEventListener('click', showCheat);
     cheatButton.addEventListener('contextmenu', hideCheat)
 }
@@ -149,7 +153,9 @@ function checkWin() {
 
     for (let letter = 0; letter < mysteryWordLength; letter++) {
         if (mysteryWord.childNodes[letter].innerHTML) {
-            unhiddenWords++;
+            if(mysteryWord.childNodes[letter].innerHTML !== '-'){
+                unhiddenWords++;
+            }
         }
     }
 

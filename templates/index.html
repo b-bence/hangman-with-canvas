@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Hangman</title>
+  
     <link rel="stylesheet" href="{{ url_for('static', filename='style/hanging.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/thunder.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/displayLetters.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/win.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
-    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='js/hanging.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='js/thunder.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='js/displayLetters.js') }}" defer></script>
+  
+    <script type="module" src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <script type="module" src="{{ url_for('static', filename='js/hanging.js') }}" defer></script>
+    <script type="module" src="{{ url_for('static', filename='js/thunder.js') }}" defer></script>
+    <script type="module" src="{{ url_for('static', filename='js/displayLetters.js') }}" defer></script>
+    <script type="module" src="{{ url_for('static', filename='js/win.js') }}" defer></script>
 </head>
 <body id="flexbox-container">
 <p id="game-title">Hangman</p>
@@ -50,28 +54,43 @@
     <!-- Modal content -->
     <div class="modal-content">
         <span class="close">&times;</span>
-        <p class="white-gothic-text">Please, choose a topic!</p>
+        <div class="white-gothic-text">Please, choose a topic!</div>
         <div id="image-container">
-            <img src="/static/images/hangman_clean.png" alt="Clean code" class="puzzle-card" data-topic="clean_code">
-            <img src="/static/images/hangman_history.png" alt="History" class="puzzle-card" data-topic="history">
-            <img src="/static/images/hangman_music.jpg" alt="Music" class="puzzle-card" data-topic="music">
-            <img src="/static/images/hangman_psy.png" alt="Psychology" class="puzzle-card" data-topic="psychology">
-            <img src="/static/images/hangman_sql.png" alt="SQL" class="puzzle-card" data-topic="sql">
-            <div id="topic-container">
-                <span class="white-gothic-text">Clean code</span>
-                <span class="white-gothic-text">History</span>
-                <span class="white-gothic-text">Music</span>
-                <span class="white-gothic-text">Psychology</span>
-                <span class="white-gothic-text">SQL</span>
+            <div class="icon">
+                <img src="/static/images/hangman_clean.png" alt="Clean code" class="puzzle-card"
+                     data-topic="clean_code">
+                <div class="white-gothic-text">Clean code</div>
+            </div>
+            <div class="icon">
+                <img src="/static/images/hangman_history.png" alt="History" class="puzzle-card" data-topic="history">
+                <div class="white-gothic-text">History</div>
+            </div>
+            <div class="icon">
+                <img src="/static/images/hangman_music.jpg" alt="Music" class="puzzle-card" data-topic="music">
+                <div class="white-gothic-text">Music</div>
+            </div>
+            <div class="icon">
+                <img src="/static/images/hangman_psy.png" alt="Psychology" class="puzzle-card" data-topic="psychology">
+                <div class="white-gothic-text">Psychology</div>
+            </div>
+            <div class="icon">
+                <img src="/static/images/hangman_sql.png" alt="SQL" class="puzzle-card" data-topic="sql">
+                <div class="white-gothic-text">SQL</div>
             </div>
         </div>
     </div>
 
 </div>
 
+<div id="win-modal">
+<canvas id=c></canvas>
+<p><a href="https://codepen.io/tmrDevelops"></a><span></span></p>
+</div>
+
 
 <div id="display-puzzle"></div>
 <button id="cheat-button">Cheat</button>
+
 
 
 </body>

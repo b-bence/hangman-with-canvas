@@ -1,3 +1,5 @@
+import {startAnimation} from './win.js'
+
 init();
 
 function init() {
@@ -150,7 +152,8 @@ function checkWin() {
     if (unhiddenWords === mysteryWordLength) {
         console.log('win');
         const winModal = document.querySelector('#win-modal');
-        winModal.style.visibility = 'visible'
+        winModal.style.visibility = 'visible';
+        startAnimation.startAnimation();
     }
 }
 

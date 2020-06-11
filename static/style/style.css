@@ -81,6 +81,18 @@
     display: none;
 }
 
+
+#win-modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    border: black solid 10px;
+    height: 500px;
+    width: 500px;
+    background: yellow;
+
 .white-gothic-text {
     color: white;
     font-family: 'Metal Mania', cursive;
@@ -108,4 +120,5 @@
     color: white;
     position: absolute;
     bottom: 50px;
+
 }

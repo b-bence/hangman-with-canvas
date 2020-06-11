@@ -148,7 +148,9 @@ function checkWin() {
     }
 
     if (unhiddenWords === mysteryWordLength) {
-        console.log('win')
+        console.log('win');
+        const winModal = document.querySelector('#win-modal');
+        winModal.style.visibility = 'visible'
     }
 }
 

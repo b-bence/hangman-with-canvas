@@ -20,3 +20,7 @@ button {
 canvas {
     text-align: center;
 }
+
+#next, #reset{
+    visibility: hidden;
+}

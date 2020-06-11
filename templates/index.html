@@ -14,11 +14,10 @@
     <script src="{{ url_for('static', filename='js/displayLetters.js') }}" defer></script>
 </head>
 <body id="flexbox-container">
-    <p id="game-title">Hangman</p>
+<p id="game-title">Hangman</p>
 
 
 <section class="thunder">
-
     <canvas id="canvas1"></canvas>
     <canvas id="canvas2"></canvas>
     <canvas id="canvas3"></canvas>
@@ -30,15 +29,12 @@
 
 
 <div class="buttons">
-    <button id="next">Next</button>
+    <button id="next" data-wrong_guess=0>Next</button>
     <button id="reset">Reset</button>
 </div>
 
 {% if word_length %}
-    <div class="letter-container">
-        {% for foo in range(word_length) %}
-            <div class="hidden-letter">A</div>
-        {% endfor %}
+    <div class="letter-container" id="hidden-word">
     </div>
 
     <div class="letter-container">

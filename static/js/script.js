@@ -1,28 +1,15 @@
+init();
+
 function init() {
     showModal();
-
-    let inputField = document.getElementById('user-input');
-    inputField.addEventListener("keyup", checkInput);
+    addEventListenerToLetters();
 }
-
-function checkInput(event) {
-    let key = event.keyCode;
-    let enterKey = 13;
-    if (key === enterKey) {
-        console.log('Enter');
-        let inputValue = document.getElementById('user-input').value;
-        console.log(inputValue)
-    }
-
-}
-
 
 function getPuzzle(topic) {
     fetch('static/data/puzzle.json')
         .then(response => response.json())
         .then(data => choosePuzzle(data[topic]));
 }
-
 
 function chooseTopic(event) {
     let chosenTopic = event.target.getAttribute('data-topic');
@@ -32,13 +19,12 @@ function chooseTopic(event) {
     modal.classList.add('hidden')
 }
 
-
 function choosePuzzle(puzzleList) {
-    let puzzle = puzzleList[Math.floor((Math.random()*puzzleList.length))]
+    let puzzle = puzzleList[Math.floor((Math.random() * puzzleList.length))]
     let puzzleField = document.getElementById('display-puzzle');
-    puzzleField.innerHTML = puzzle
+    puzzleField.innerHTML = puzzle;
+    hideWord()
 }
-
 
 function showModal() {
 
@@ -58,7 +44,80 @@ function showModal() {
     for (let topic of puzzleTopics) {
         topic.addEventListener('click', chooseTopic)
     }
-
 }
 
-init();
+function hideWord() {
+    const word = document.querySelector('#display-puzzle').innerHTML;
+    const hiddenWordBox = document.querySelector('#hidden-word');
+
+    let hiddenWordBoxValue = "";
+
+    for (let letter = 0; letter < word.length; letter++) {
+        if (word[letter] !== ' ' && word[letter] !== "-") {
+            hiddenWordBoxValue += `<div class="hidden-letter" data-letter="${word[letter]}"></div>`
+        }
+    }
+    hiddenWordBox.innerHTML = hiddenWordBoxValue;
+}
+
+function addEventListenerToLetters() {
+    const letters = document.querySelectorAll('.letter');
+
+    letters.forEach(letter => {
+        letter.addEventListener('click', handleClickOnLetters.bind(this, letter))
+    })
+}
+
+function handleClickOnLetters(letter) {
+    const letterValue = letter.dataset.letter;
+    const mysteryWord = document.querySelector('#hidden-word');
+    letter.disabled = true;
+
+    let correctGuess = false;
+    for (let letter = 0; letter < mysteryWord.childNodes.length; letter++) {
+        if (mysteryWord.childNodes[letter].dataset.letter === letterValue) {
+            mysteryWord.childNodes[letter].innerHTML = letterValue;
+            correctGuess = true;
+        }
+    }
+
+    if (!correctGuess) {
+        simulateClickOnHiddenButton()
+    }
+    checkWin();
+}
+
+function simulateClickOnHiddenButton() {
+    const nextButton = document.querySelector('#next');
+    nextButton.click();
+    let numberOfWrongGuesses = +nextButton.dataset.wrong_guess;
+    numberOfWrongGuesses++;
+    nextButton.dataset.wrong_guess = numberOfWrongGuesses;
+
+    checkLose(numberOfWrongGuesses);
+}
+
+function checkLose(numberOfWrongGuesses) {
+    const numberOfLives = 9;
+    if (numberOfWrongGuesses === numberOfLives) {
+        console.log('lost')
+    }
+}
+
+function checkWin() {
+    const mysteryWord = document.querySelector('#hidden-word');
+    const mysteryWordLength = mysteryWord.childNodes.length;
+
+    let unhiddenWords = 0;
+
+    for (let letter = 0; letter < mysteryWordLength; letter++) {
+        if (mysteryWord.childNodes[letter].innerHTML) {
+            unhiddenWords++;
+        }
+    }
+
+    if (unhiddenWords === mysteryWordLength) {
+        console.log('win')
+    }
+}
+

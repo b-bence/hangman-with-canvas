@@ -85,7 +85,7 @@ function addEventListenerToLetters() {
         letter.addEventListener('click', handleClickOnLetters.bind(this, letter))
     });
 
-    let cheatButton = document.getElementById('cheat-button')
+    let cheatButton = document.getElementById('cheat-button');
     cheatButton.addEventListener('click', showCheat);
     cheatButton.addEventListener('contextmenu', hideCheat)
 }

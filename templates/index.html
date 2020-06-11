@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Hangman</title>
+  
     <link rel="stylesheet" href="{{ url_for('static', filename='style/hanging.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/thunder.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/displayLetters.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/win.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
+  
     <script type="module" src="{{ url_for('static', filename='js/script.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/hanging.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/thunder.js') }}" defer></script>
@@ -54,17 +56,26 @@
         <span class="close">&times;</span>
         <p class="white-gothic-text">Please, choose a topic!</p>
         <div id="image-container">
-            <img src="/static/images/hangman_clean.png" alt="Clean code" class="puzzle-card" data-topic="clean_code">
-            <img src="/static/images/hangman_history.png" alt="History" class="puzzle-card" data-topic="history">
-            <img src="/static/images/hangman_music.jpg" alt="Music" class="puzzle-card" data-topic="music">
-            <img src="/static/images/hangman_psy.png" alt="Psychology" class="puzzle-card" data-topic="psychology">
-            <img src="/static/images/hangman_sql.png" alt="SQL" class="puzzle-card" data-topic="sql">
-            <div id="topic-container">
-                <span class="white-gothic-text">Clean code</span>
-                <span class="white-gothic-text">History</span>
-                <span class="white-gothic-text">Music</span>
-                <span class="white-gothic-text">Psychology</span>
-                <span class="white-gothic-text">SQL</span>
+            <div class="icon">
+                <img src="/static/images/hangman_clean.png" alt="Clean code" class="puzzle-card"
+                     data-topic="clean_code">
+                <p class="white-gothic-text">Clean code</p>
+            </div>
+            <div class="icon">
+                <img src="/static/images/hangman_history.png" alt="History" class="puzzle-card" data-topic="history">
+                <p class="white-gothic-text">History</p>
+            </div>
+            <div class="icon">
+                <img src="/static/images/hangman_music.jpg" alt="Music" class="puzzle-card" data-topic="music">
+                <p class="white-gothic-text">Music</p>
+            </div>
+            <div class="icon">
+                <img src="/static/images/hangman_psy.png" alt="Psychology" class="puzzle-card" data-topic="psychology">
+                <p class="white-gothic-text">Psychology</p>
+            </div>
+            <div class="icon">
+                <img src="/static/images/hangman_sql.png" alt="SQL" class="puzzle-card" data-topic="sql">
+                <p class="white-gothic-text">SQL</p>
             </div>
         </div>
     </div>
@@ -79,6 +90,7 @@
 
 <div id="display-puzzle"></div>
 <button id="cheat-button">Cheat</button>
+
 
 
 </body>

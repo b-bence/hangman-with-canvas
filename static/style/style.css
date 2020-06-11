@@ -20,6 +20,7 @@
     display: inline-flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    width: 100%;
 }
 
 .puzzle-card {
@@ -28,6 +29,7 @@
     border-color: darkred;
     border-width: 10px;
     background-color: white;
+    height: 200px;
 }
 
 #topic-container {
@@ -81,7 +83,6 @@
     display: none;
 }
 
-
 #win-modal{
     position: fixed;
     top: 50%;
@@ -98,11 +99,9 @@
     font-family: 'Metal Mania', cursive;
     font-size: 30px;
     padding-bottom: 50px;
+    text-align: center;
 }
 
-#hangman {
-    /*margin-top: 100px;*/
-}
 
 #cheat-button {
     color: white;

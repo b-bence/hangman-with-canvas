@@ -8,8 +8,12 @@ clearCanvas = () => {
 Draw = (part) => {
     switch (part) {
         case 'gallows' :
-            context.strokeStyle = '#f3c623';
+            context.strokeStyle = 'blanchedalmond';
             context.lineWidth = 10;
+            context.shadowBlur = 2;
+            context.shadowOffsetX = 3;
+            context.shadowOffsetY = 3;
+            context.shadowColor = "darkred";
             context.beginPath();
             context.moveTo(175, 225);
             context.lineTo(5, 225);

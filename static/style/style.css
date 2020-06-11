@@ -83,7 +83,7 @@
     display: none;
 }
 
-#win-modal{
+#win-modal {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -93,6 +93,7 @@
     height: 500px;
     width: 500px;
     background: yellow;
+}
 
 .white-gothic-text {
     color: white;
@@ -119,5 +120,4 @@
     color: white;
     position: absolute;
     bottom: 50px;
-
 }

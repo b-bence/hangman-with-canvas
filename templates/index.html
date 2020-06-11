@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Hangman</title>
+  
     <link rel="stylesheet" href="{{ url_for('static', filename='style/hanging.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/thunder.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/displayLetters.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/win.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
-    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+  
+    <script type="module" src="{{ url_for('static', filename='js/script.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/hanging.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/thunder.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/displayLetters.js') }}" defer></script>
+    <script type="module" src="{{ url_for('static', filename='js/win.js') }}" defer></script>
 </head>
 <body id="flexbox-container">
 <p id="game-title">Hangman</p>
@@ -34,14 +38,14 @@
 </div>
 
 {% if word_length %}
-<div class="letter-container" id="hidden-word">
-</div>
+    <div class="letter-container" id="hidden-word">
+    </div>
 
-<div class="letter-container">
-    {% for letter in alphabet %}
-    <button data-letter='{{ letter }}' class="letter">{{ letter }}</button>
-    {% endfor %}
-</div>
+    <div class="letter-container" id="select-letters">
+        {% for letter in alphabet %}
+            <button data-letter='{{ letter }}' class="letter">{{ letter }}</button>
+        {% endfor %}
+    </div>
 {% endif %}
 
 <!-- The Modal -->
@@ -78,8 +82,15 @@
 
 </div>
 
+<div id="win-modal">
+<canvas id=c></canvas>
+<p><a href="https://codepen.io/tmrDevelops"></a><span></span></p>
+</div>
+
 
 <div id="display-puzzle"></div>
+<button id="cheat-button">Cheat</button>
+
 
 
 </body>

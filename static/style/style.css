@@ -1,6 +1,6 @@
 #game-title {
     text-align: left;
-    position: initial;
+    position: absolute;
     top: 25px;
     color: blanchedalmond;
     font-size: 80px;
@@ -83,6 +83,17 @@
     display: none;
 }
 
+#win-modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    border: black solid 10px;
+    height: 500px;
+    width: 500px;
+    background: yellow;
+
 .white-gothic-text {
     color: white;
     font-family: 'Metal Mania', cursive;
@@ -91,6 +102,22 @@
     text-align: center;
 }
 
-#hangman{
-    /*margin-top: 100px;*/
+
+#cheat-button {
+    color: white;
+    background-color: black;
+    font-family: 'Metal Mania', cursive;
+    border-style: ridge;
+    border-color: darkred;
+    border-width: 10px;
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+}
+
+#display-puzzle{
+    color: white;
+    position: absolute;
+    bottom: 50px;
+
 }

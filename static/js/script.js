@@ -1,4 +1,5 @@
-import {startAnimation} from './win.js'
+import {startWinAnimation} from './win.js'
+import {startLoseAnimation} from './lose.js'
 
 init();
 
@@ -133,7 +134,10 @@ function simulateClickOnHiddenButton() {
 function checkLose(numberOfWrongGuesses) {
     const numberOfLives = 9;
     if (numberOfWrongGuesses === numberOfLives) {
-        console.log('lost')
+        console.log('lost');
+        const loseModal = document.querySelector('#lose-modal');
+        loseModal.style.visibility = 'visible';
+        startLoseAnimation.startLoseAnimation();
     }
 }
 
@@ -153,7 +157,7 @@ function checkWin() {
         console.log('win');
         const winModal = document.querySelector('#win-modal');
         winModal.style.visibility = 'visible';
-        startAnimation.startAnimation();
+        startWinAnimation.startWinAnimation();
     }
 }
 

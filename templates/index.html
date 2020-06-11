@@ -15,6 +15,7 @@
     <script src="{{ url_for('static', filename='js/hanging.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/thunder.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/displayLetters.js') }}" defer></script>
+    <script type="module" src="{{ url_for('static', filename='js/lose.js') }}" defer></script>
     <script type="module" src="{{ url_for('static', filename='js/win.js') }}" defer></script>
 </head>
 <body id="flexbox-container">
@@ -85,6 +86,10 @@
 <canvas id=c></canvas>
 <p><a href="https://codepen.io/tmrDevelops"></a><span></span></p>
 </div>
+
+
+<div id="lose-modal"><canvas id="lose-canvas"></canvas></div>
+
 
 
 <div id="display-puzzle"></div>

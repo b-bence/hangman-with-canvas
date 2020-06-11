@@ -90,9 +90,21 @@
     transform: translate(-50%, -50%);
     visibility: hidden;
     border: black solid 10px;
-    height: 500px;
-    width: 500px;
+    height: 750px;
+    width: 750px;
     background: yellow;
+}
+
+#lose-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    border: black solid 10px;
+    height: 750px;
+    width: 750px;
+    background: black;
 }
 
 .white-gothic-text {

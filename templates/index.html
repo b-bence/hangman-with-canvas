@@ -12,9 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
   
     <script type="module" src="{{ url_for('static', filename='js/script.js') }}" defer></script>
-    <script type="module" src="{{ url_for('static', filename='js/hanging.js') }}" defer></script>
-    <script type="module" src="{{ url_for('static', filename='js/thunder.js') }}" defer></script>
-    <script type="module" src="{{ url_for('static', filename='js/displayLetters.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/hanging.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/thunder.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/displayLetters.js') }}" defer></script>
     <script type="module" src="{{ url_for('static', filename='js/win.js') }}" defer></script>
 </head>
 <body id="flexbox-container">
@@ -57,8 +57,7 @@
         <div class="white-gothic-text">Please, choose a topic!</div>
         <div id="image-container">
             <div class="icon">
-                <img src="/static/images/hangman_clean.png" alt="Clean code" class="puzzle-card"
-                     data-topic="clean_code">
+                <img src="/static/images/hangman_clean.png" alt="Clean code" class="puzzle-card" data-topic="clean_code">
                 <div class="white-gothic-text">Clean code</div>
             </div>
             <div class="icon">

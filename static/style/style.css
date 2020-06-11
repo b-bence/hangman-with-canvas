@@ -88,6 +88,24 @@
     padding-bottom: 50px;
 }
 
-#hangman{
+#hangman {
     /*margin-top: 100px;*/
+}
+
+#cheat-button {
+    color: white;
+    background-color: black;
+    font-family: 'Metal Mania', cursive;
+    border-style: ridge;
+    border-color: darkred;
+    border-width: 10px;
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+}
+
+#display-puzzle{
+    color: white;
+    position: absolute;
+    bottom: 50px;
 }

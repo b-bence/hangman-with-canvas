@@ -1,5 +1,135 @@
-h1{
+#game-title {
+    text-align: left;
+    position: absolute;
+    top: 25px;
+    color: blanchedalmond;
+    font-size: 80px;
+    font-style: unset;
+    text-shadow: 2px 2px red;
+    font-family: 'Metal Mania', cursive;
+}
+
+
+#input-field {
     text-align: center;
-    text-shadow: 2px 2px gray;
-    font-family: sans-serif;
+    position: relative;
+    top: 100px;
+}
+
+#image-container {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.puzzle-card {
+    width: 200px;
+    border-style: ridge;
+    border-color: darkred;
+    border-width: 10px;
+    background-color: white;
+    height: 200px;
+}
+
+#topic-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    color: white;
+}
+
+/* The Modal (background) */
+.modal {
+    display: block;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    background-image: url("/static/images/modal.jpg");
+    background-size: 100%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+#win-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    border: black solid 10px;
+    height: 750px;
+    width: 750px;
+    background: yellow;
+}
+
+#lose-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    border: black solid 10px;
+    height: 750px;
+    width: 750px;
+    background: black;
+}
+
+.white-gothic-text {
+    color: white;
+    font-family: 'Metal Mania', cursive;
+    font-size: 30px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+
+#cheat-button {
+    color: white;
+    background-color: black;
+    font-family: 'Metal Mania', cursive;
+    border-style: ridge;
+    border-color: darkred;
+    border-width: 10px;
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+}
+
+#display-puzzle{
+    color: white;
+    position: absolute;
+    bottom: 50px;
 }

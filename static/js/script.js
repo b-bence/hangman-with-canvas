@@ -110,6 +110,7 @@ function handleClickOnLetters(letter) {
     const letterValue = letter.dataset.letter;
     const mysteryWord = document.querySelector('#hidden-word');
     letter.disabled = true;
+    letter.style.color = 'black';
 
     let correctGuess = false;
     for (let letter = 0; letter < mysteryWord.childNodes.length; letter++) {

@@ -74,9 +74,9 @@ function hideWord() {
     for (let letter = 0; letter < word.length; letter++) {
         if (word[letter] !== ' ' && word[letter] !== "-") {
             hiddenWordBoxValue += `<div class="hidden-letter" data-letter="${word[letter]}"></div>`
-        }else if(word[letter] === "-"){
+        } else if (word[letter] === "-") {
             hiddenWordBoxValue += `<div class="hyphen" data-letter="${word[letter]}">-</div>`
-        }else{
+        } else {
             hiddenWordBoxValue += `<div class="empty-letter" data-letter="${word[letter]}"></div>`
         }
     }
@@ -147,16 +147,23 @@ function checkLose(numberOfWrongGuesses) {
 
 function checkWin() {
     const mysteryWord = document.querySelector('#hidden-word');
-    const mysteryWordLength = mysteryWord.childNodes.length;
+    const mysteryWordString = document.querySelector('#display-puzzle');
+
+    const includesSpace = mysteryWordString.innerHTML.includes(" ");
+    let mysteryWordLength = mysteryWord.childNodes.length;
+    ;
 
     let unhiddenWords = 0;
-
     for (let letter = 0; letter < mysteryWordLength; letter++) {
         if (mysteryWord.childNodes[letter].innerHTML) {
-            if(mysteryWord.childNodes[letter].innerHTML !== '-'){
+            if (mysteryWord.childNodes[letter].innerHTML !== '') {
                 unhiddenWords++;
             }
         }
+    }
+
+    if (includesSpace) {
+        mysteryWordLength--
     }
 
     if (unhiddenWords === mysteryWordLength) {

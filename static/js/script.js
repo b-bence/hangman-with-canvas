@@ -3,6 +3,13 @@ init();
 function init() {
     showModal();
     addEventListenerToLetters();
+
+    let letterContainer = document.getElementById('select-letters');
+    letterContainer.classList.add('hidden');
+    let cheatButton = document.getElementById('cheat-button');
+    cheatButton.classList.add('hidden');
+    let displayPuzzle = document.getElementById('display-puzzle');
+    displayPuzzle.classList.add('hidden');
 }
 
 function getPuzzle(topic) {
@@ -12,6 +19,11 @@ function getPuzzle(topic) {
 }
 
 function chooseTopic(event) {
+    let letterContainer = document.getElementById('select-letters');
+    letterContainer.classList.remove('hidden');
+    let cheatButton = document.getElementById('cheat-button');
+    cheatButton.classList.remove('hidden');
+
     let chosenTopic = event.target.getAttribute('data-topic');
     console.log(chosenTopic);
     getPuzzle(chosenTopic);
@@ -20,7 +32,7 @@ function chooseTopic(event) {
 }
 
 function choosePuzzle(puzzleList) {
-    let puzzle = puzzleList[Math.floor((Math.random() * puzzleList.length))]
+    let puzzle = puzzleList[Math.floor((Math.random() * puzzleList.length))];
     let puzzleField = document.getElementById('display-puzzle');
     puzzleField.innerHTML = puzzle;
     hideWord()
@@ -36,13 +48,17 @@ function showModal() {
 
     // When the user clicks on <span> (x), close the modal
     span.onclick = function () {
-        modal.classList.add('hidden')
+        modal.classList.add('hidden');
+        let letterContainer = document.getElementById('select-letters');
+        letterContainer.classList.remove('hidden');
+        let cheatButton = document.getElementById('cheat-button');
+        cheatButton.classList.remove('hidden');
     };
 
     // EventListeners on topics
     let puzzleTopics = document.getElementsByClassName('puzzle-card');
     for (let topic of puzzleTopics) {
-        topic.addEventListener('click', chooseTopic)
+        topic.addEventListener('click', chooseTopic);
     }
 }
 
@@ -65,7 +81,22 @@ function addEventListenerToLetters() {
 
     letters.forEach(letter => {
         letter.addEventListener('click', handleClickOnLetters.bind(this, letter))
-    })
+    });
+
+    let cheatButton = document.getElementById('cheat-button')
+    cheatButton.addEventListener('click', showCheat);
+    cheatButton.addEventListener('contextmenu', hideCheat)
+}
+
+function showCheat() {
+    let displayPuzzle = document.getElementById('display-puzzle');
+    displayPuzzle.classList.remove('hidden');
+}
+
+function hideCheat(event) {
+    event.preventDefault();
+    let displayPuzzle = document.getElementById('display-puzzle');
+    displayPuzzle.classList.add('hidden');
 }
 
 function handleClickOnLetters(letter) {

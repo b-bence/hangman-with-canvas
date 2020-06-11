@@ -39,7 +39,7 @@
     <div class="letter-container" id="hidden-word">
     </div>
 
-    <div class="letter-container">
+    <div class="letter-container" id="select-letters">
         {% for letter in alphabet %}
             <button data-letter='{{ letter }}' class="letter">{{ letter }}</button>
         {% endfor %}
@@ -52,6 +52,7 @@
     <!-- Modal content -->
     <div class="modal-content">
         <span class="close">&times;</span>
+        <p class="white-gothic-text">Please, choose a topic!</p>
         <div id="image-container">
             <img src="/static/images/hangman_clean.png" alt="Clean code" class="puzzle-card" data-topic="clean_code">
             <img src="/static/images/hangman_history.png" alt="History" class="puzzle-card" data-topic="history">
@@ -59,11 +60,11 @@
             <img src="/static/images/hangman_psy.png" alt="Psychology" class="puzzle-card" data-topic="psychology">
             <img src="/static/images/hangman_sql.png" alt="SQL" class="puzzle-card" data-topic="sql">
             <div id="topic-container">
-                <span class="topic-names">Clean code</span>
-                <span class="topic-names">History</span>
-                <span class="topic-names">Music</span>
-                <span class="topic-names">Psychology</span>
-                <span class="topic-names">SQL</span>
+                <span class="white-gothic-text">Clean code</span>
+                <span class="white-gothic-text">History</span>
+                <span class="white-gothic-text">Music</span>
+                <span class="white-gothic-text">Psychology</span>
+                <span class="white-gothic-text">SQL</span>
             </div>
         </div>
     </div>
@@ -77,6 +78,7 @@
 
 
 <div id="display-puzzle"></div>
+<button id="cheat-button">Cheat</button>
 
 
 </body>

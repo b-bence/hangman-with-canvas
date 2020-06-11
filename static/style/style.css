@@ -1,6 +1,6 @@
 #game-title {
     text-align: left;
-    position: initial;
+    position: absolute;
     top: 25px;
     color: blanchedalmond;
     font-size: 80px;
@@ -25,14 +25,16 @@
 .puzzle-card {
     width: 200px;
     border-style: ridge;
-    border-color: blanchedalmond;
+    border-color: darkred;
     border-width: 10px;
+    background-color: white;
 }
 
 #topic-container {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
+    color: white;
 }
 
 /* The Modal (background) */
@@ -56,6 +58,8 @@
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
+    background-image: url("/static/images/modal.jpg");
+    background-size: 100%;
 }
 
 /* The Close Button */
@@ -77,6 +81,7 @@
     display: none;
 }
 
+
 #win-modal{
     position: fixed;
     top: 50%;
@@ -87,4 +92,33 @@
     height: 500px;
     width: 500px;
     background: yellow;
+
+.white-gothic-text {
+    color: white;
+    font-family: 'Metal Mania', cursive;
+    font-size: 30px;
+    padding-bottom: 50px;
+}
+
+#hangman {
+    /*margin-top: 100px;*/
+}
+
+#cheat-button {
+    color: white;
+    background-color: black;
+    font-family: 'Metal Mania', cursive;
+    border-style: ridge;
+    border-color: darkred;
+    border-width: 10px;
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+}
+
+#display-puzzle{
+    color: white;
+    position: absolute;
+    bottom: 50px;
+
 }

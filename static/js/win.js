@@ -1,6 +1,6 @@
-export let startAnimation = {
+export let startWinAnimation = {
 
-    startAnimation: function () {
+    startWinAnimation: function () {
         var w = c.width = window.innerWidth,
             h = c.height = window.innerHeight,
             ctx = c.getContext('2d'),

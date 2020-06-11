@@ -7,11 +7,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style/thunder.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/displayLetters.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/win.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
     <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/hanging.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/thunder.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/displayLetters.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/win.js') }}" defer></script>
 </head>
 <body id="flexbox-container">
 <p id="game-title">Hangman</p>
@@ -66,6 +68,11 @@
         </div>
     </div>
 
+</div>
+
+<div id="win-modal">
+<canvas id=c></canvas>
+<p><a href="https://codepen.io/tmrDevelops"></a><span></span></p>
 </div>
 
 

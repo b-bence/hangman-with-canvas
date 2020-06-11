@@ -77,6 +77,14 @@
     display: none;
 }
 
-#hangman{
-    /*margin-top: 100px;*/
+#win-modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    border: black solid 10px;
+    height: 500px;
+    width: 500px;
+    background: yellow;
 }
